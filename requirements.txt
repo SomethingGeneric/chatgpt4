@@ -1,0 +1,5 @@
+flask[async]
+markdown
+openai
+nltk
+toml

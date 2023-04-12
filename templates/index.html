@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Markdown to HTML</title>
+    <style>
+      /* Styling for messages */
+      .message-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .message {
+        padding: 10px;
+        background-color: #eee;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Conversation ID: {{ conversation_id }}</h1>
+    <hr>
+    <div class="message-container">
+      {% for message in history %}
+        <div class="message">{{ message['content']|safe }}</div>
+      {% endfor %}
+    </div>
+    <hr>
+    <form method="post">
+      <label for="input_string">Enter your markdown:</label>
+      <br>
+      <textarea name="input_string"></textarea>
+      <br>
+      <input type="submit" value="Convert to HTML">
+      <input type="hidden" name="conversation_id" value="{{conversation_id}}">
+    </form>
+</body>
+</html>
