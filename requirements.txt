@@ -3,3 +3,4 @@ markdown
 openai
 nltk
 toml
+pymdown-extensions
